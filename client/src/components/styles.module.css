@@ -1,0 +1,442 @@
+.material_icons {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.form_send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px;
+}
+
+/* Окно регистрации и входа */
+
+.modal_auth {
+
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_box {
+    width: 100%;
+    padding: 0 40px;
+}
+
+.h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.form_input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.form_btn {
+    width: 100%;
+    font-size: 1em;
+}
+
+.login_register {
+    font-size: .9em;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+
+}
+
+.login_register a {
+    text-decoration: none;
+}
+
+/* Кнопка добавить в корзину */
+
+.cart_button {
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 250px;
+    border-radius: 40px;
+    background: #fff;
+    border: 2px solid green;
+    color: green;
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.cart_button:hover {
+    color: white;
+    background: green;
+}
+
+.cart_button:active {
+
+    letter-spacing: 2px;
+}
+
+.cart_button:after {
+    content: "Добавить в корзину";
+}
+
+.onclic {
+    width: 40px;
+    border-color: #bbbbbb;
+    border-width: 3px;
+    font-size: 0;
+    border-left-color: green;
+    animation: rotating 2s 0.25s linear infinite;
+}
+
+.onclic:after {
+    content: "";
+}
+
+.onclic:hover {
+    color: green;
+    background: white;
+}
+
+.validate {
+    font-size: 15px;
+    color: white;
+    background: green;
+}
+
+.validate:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45' height='40' viewBox='-4.56 -4.56 33.12 33.12' fill='none'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round' stroke='%23CCCCCC' stroke-width='0.48'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z' stroke='%23ffffff' stroke-width='0.96'%3E%3C/path%3E%3Cpath d='M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z' stroke='%23ffffff' stroke-width='0.96'%3E%3C/path%3E%3Cpath d='M11 10.8L12.1429 12L15 9' stroke='%23ffffff' stroke-width='0.96' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M2 3L2.26121 3.09184C3.5628 3.54945 4.2136 3.77826 4.58584 4.32298C4.95808 4.86771 4.95808 5.59126 4.95808 7.03836V9.76C4.95808 12.7016 5.02132 13.6723 5.88772 14.5862C6.75412 15.5 8.14857 15.5 10.9375 15.5H12M16.2404 15.5C17.8014 15.5 18.5819 15.5 19.1336 15.0504C19.6853 14.6008 19.8429 13.8364 20.158 12.3075L20.6578 9.88275C21.0049 8.14369 21.1784 7.27417 20.7345 6.69708C20.2906 6.12 18.7738 6.12 17.0888 6.12H11.0235M4.95808 6.12H7' stroke='%23ffffff' stroke-width='0.96' stroke-linecap='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Страница товара */
+
+.card_device {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    height: 90%;
+    width: 380px;
+
+
+}
+
+.device_price .h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.device_card_name {
+    text-align: center;
+    align-items: center;
+    margin: 1% 10px;
+    max-height: 100%;
+    height: 100px;
+}
+
+.device_page_img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+
+.device_info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+.list_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    max-width: 100%;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+
+}
+
+.info_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 100%;
+
+}
+
+.title_name {
+    color: #333;
+}
+
+.title_info {
+    align-items: center;
+    display: flex;
+    padding: 0 0 0 8px;
+    text-align: left;
+    width: 50%;
+}
+
+/* Карточка в шопе */
+
+.device_item {
+    display: flex;
+    width: 100%;
+    max-width: 240px;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.device_list {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+Col {
+    flex: 0;
+}
+
+.card {
+    width: 240px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    position: relative;
+    margin: 10px;
+}
+
+.card:hover {
+    box-shadow: 2px 8px 16px rgba(0, 0, 0, .2);
+}
+
+.card_top {
+    flex: 0 0 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.card_img>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.2s;
+}
+
+.card_img:hover>img {
+    transform: scale(1.1);
+}
+
+.card_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex: 1 0 auto;
+
+}
+
+.card_name {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Ограничение количества строк текста до 2 */
+    -webkit-box-orient: vertical;
+    /* Ориентация контейнера по вертикали */
+    overflow: hidden;
+    /* Скрытие текста, который выходит за пределы контейнера */
+    text-overflow: ellipsis;
+    /* Отображение многоточия для обрезанного текста */
+    height: 4.5em;
+    display: block;
+    margin-top: 10px;
+    font-weight: 400;
+    color: #414141;
+
+}
+
+
+.card_price {
+    width: 60%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #414141;
+    transition: 0.5s;
+}
+
+.card_btn_add {
+    display: block;
+    width: 40px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    transition: 0.2s;
+
+}
+
+.card_btn_add:hover {
+    color: black;
+    transform: scale(1.3);
+}
+
+.card_btn_add:active {
+    color: white;
+    background-color: green;
+
+}
+
+.categories_top {
+    display: flex;
+    justify-content: space-between;
+    margin: 18px;
+    color: #8492a6;
+}
+
+.left_top {
+    width: 100%;
+    max-width: 640px;
+}
+
+.right_top {
+    display: flex;
+    justify-content: start;
+    width: 200px;
+}
+
+
+
+.name_top {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+.basket_device_card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+    transition: 0.2s;
+}
+
+.basket_device_card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.card_info_right {
+    width: 100%;
+    max-width: 650px;
+}
+
+.card_info_left {
+    display: flex;
+    justify-content: space-evenly;
+    height: 112px;
+    width: 250px;
+}
+
+.info_left_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket_device_card_name {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Ограничение количества строк текста до 2 */
+    -webkit-box-orient: vertical;
+    /* Ориентация контейнера по вертикали */
+    overflow: hidden;
+    /* Скрытие текста, который выходит за пределы контейнера */
+    text-overflow: ellipsis;
+    /* Отображение многоточия для обрезанного текста */
+    margin-left: 10px;
+    margin-right: 20px;
+
+}
+
+.basket_device_card_price {
+    font-size: 18px;
+}
+
+.basket_card_footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #e9edef;
+
+}
+
+.footer_container {
+    margin-top: 10px;
+    height: 60px;
+    background-color: black;
+    position: relative;
+   
+
+}

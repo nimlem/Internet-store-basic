@@ -7,17 +7,19 @@ import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../untils/consts'
 import { login, registration } from '../http/userApi'
 import { observer } from 'mobx-react-lite'
 import { Context } from '../index'
+import styles from '../components/styles.module.css'
+
 
 const Auth = observer(() => {
     const { user } = useContext(Context)
     const location = useLocation()
-    const history = useNavigate()
+    const navigate = useNavigate()
     const isLogin = location.pathname === LOGIN_ROUTE
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const click = async () => {
-
+        
         try {
             let data;
             if (isLogin) {
@@ -28,10 +30,15 @@ const Auth = observer(() => {
             }
             user.setUser(data)
             user.setIsAuth(true)
-            history(SHOP_ROUTE)
+            if (user.user.role == "ADMIN") {
+                user.setIsAdmin(true)
+            }
+            navigate(SHOP_ROUTE)
+
         } catch (e) {
             alert(e.response.data.message)
         }
+
     }
 
 
@@ -40,40 +47,49 @@ const Auth = observer(() => {
     return (
         <Container
             className="d-flex justify-content-center align-items-center"
-            style={{ height: window.innerHeight - 54 }}
+            style={{ height: window.innerHeight - 55 }}
         >
-            <Card style={{ width: 500 }} className="p-4">
-                <h2 className='m-auto'> {isLogin ? 'Авторизация' : 'Регистрация'}</h2>
-                <Form className='d-flex flex-column'>
+            <Card className={styles.modal_auth}>
+
+                <h2 className={styles.h2}> {isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+
+                <Form className={styles.form_box} >
                     <Form.Control
-                        className='mt-3'
-                        placeholder='Введите ваш email...'
+                        className={styles.form_input}
+                        placeholder='Введите ваш логин...'
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
+
                     <Form.Control
-                        className='mt-3'
+                        className={styles.form_input}
                         placeholder='Введите ваш пароль...'
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                     />
 
-                    <div className='Container d-flex justify-content-between mt-2 p-2'>
-                        {isLogin ?
-                            <div>
-                                Нет аккаунта?<NavLink to={REGISTRATION_ROUTE}> Создать акканут</NavLink>
-                            </div>
-                            :
-                            <div>
-                                Есть аккаунт?<NavLink to={LOGIN_ROUTE}> Войти </NavLink>
-                            </div>}
-                        <Button
-                            variant={'outline-success'}
-                            onClick={click}
-                        >
-                            {isLogin ? 'Войти' : 'Регистрация'}
-                        </Button>
+                    <div className=''>
+                        <div>
+                            <Button
+                                className={styles.form_btn}
+                                variant={'outline-success'}
+                                onClick={click}
+                            >
+                                {isLogin ? 'Войти' : 'Регистрация'}
+                            </Button>
+                        </div>
+                        <div className={styles.login_register}>
+                            {isLogin ?
+                                <div>
+                                    Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Создать акканут</NavLink>
+                                </div>
+                                :
+                                <div>
+                                    Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войти </NavLink>
+                                </div>}
+                        </div>
+
                     </div>
 
                 </Form>

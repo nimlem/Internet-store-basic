@@ -1,6 +1,9 @@
 export const ADMIN_ROUTE = '/admin'
 export const LOGIN_ROUTE = '/login'
 export const REGISTRATION_ROUTE = '/registration'
-export const SHOP_ROUTE = '/'
+export const SHOP_ROUTE = '/shop'
 export const BASKET_ROUTE = '/basket'
 export const DEVICE_ROUTE = '/device'
+export const TOKEN = "7186924858:AAFY_IuODjhg7Lfe822Ch9bseOs9h8TGEnM"
+export const CHAT_ID = "-4281473065"
+export const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`

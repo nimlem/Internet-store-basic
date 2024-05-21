@@ -9,9 +9,19 @@ class BrandController{
         const brand = await Brand.create({name})
         return res.json(brand)
     }
+    async delete(req, res) {
+        const { brandId } = req.params
+        const brand = await Brand.destroy({
+            where: {
+                id: brandId,
+            }
+        })
+        return res.json(brand)
+    }
     async getAll(req,res){
         const brands = await Brand.findAll()
         return res.json(brands)
+        
     }
 }
 

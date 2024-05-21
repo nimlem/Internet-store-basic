@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
-import { createBrand } from '../../http/deviceApi'
+import { createBrand, removeOneBrand } from '../../http/deviceApi'
+import { Context } from '../..'
 
 const CreateBrand = ({ show, onHide }) => {
 
     const [value, setValue] = useState('')
 
+    const { device } = useContext(Context)
+
     const addBrand = () => {
         createBrand({ name: value }).then(data => {
             setValue('')
             onHide()
+            window.location.reload();
         })
+    }
+    const removeBrand = (event) => {
+        const brandId = event.target.id;
+        removeOneBrand(brandId)
+        window.location.reload();
+        console.log(brandId)
     }
 
     return (
@@ -22,10 +32,22 @@ const CreateBrand = ({ show, onHide }) => {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Добавить брэнд
+                    Брэнды товаров
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
+            <div>
+                    <h6 className='mb-3'>Созданные брэнды товаров</h6>
+                    {device.brands.map(brand =>
+                        <div className='d-flex justify-content-between m-2'
+                            key={brand.id}>
+                            <span>{brand.name}</span>
+                            <Button id={brand.id}
+                                variant='outline-danger'
+                                 onClick={removeBrand}
+                            >x</Button>
+                        </div>)}
+                </div>
                 <Form>
                     <Form.Control
                         value={value}

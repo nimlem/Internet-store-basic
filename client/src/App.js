@@ -7,9 +7,11 @@ import { Context } from './index';
 import { check } from './http/userApi';
 import { Spinner } from 'react-bootstrap';
 import Footer from './components/Footer';
+import image from './image/imageMain.png';
+import styles from './components/styles.module.css';
 
 const App = observer(() => {
-  const { user , device} = useContext(Context)
+  const { user, device } = useContext(Context)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -25,9 +27,10 @@ const App = observer(() => {
 
   return (
     <BrowserRouter>
+      {/* <img className={styles.image_main} src={image}></img> */}
       <NavBar />
       <AppRouter />
-     <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 });

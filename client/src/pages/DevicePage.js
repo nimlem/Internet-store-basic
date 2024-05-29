@@ -54,10 +54,11 @@ const DevicePage = () => {
 
         <Col md={10} className='mt-3'
           style={{
+            maxHeight:500,
             width: 540,
             border: 'none',
             borderRadius: 20,
-            boxShadow: `0 0 1px rgba(0, 0, 0, 2)`,
+            // boxShadow: `2px 8px 16px rgba(0, 0, 0, .2)`,
           }}>
 
           <Image className={styles.device_page_img} src={process.env.REACT_APP_API_URL + device.img} />

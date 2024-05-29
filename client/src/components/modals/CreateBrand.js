@@ -45,7 +45,7 @@ const CreateBrand = ({ show, onHide }) => {
                             <Button id={brand.id}
                                 variant='outline-danger'
                                  onClick={removeBrand}
-                            >x</Button>
+                            >Удалить</Button>
                         </div>)}
                 </div>
                 <Form>

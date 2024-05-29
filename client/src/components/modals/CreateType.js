@@ -47,7 +47,7 @@ const CreateType = ({ show, onHide }) => {
                             <Button id={type.id}
                                 variant='outline-danger'
                                 onClick={removeType}
-                            >x</Button>
+                            >Удалить</Button>
                         </div>)}
                 </div>
                 <Form>

@@ -1,3 +1,7 @@
+/* body{
+    background-image: url('../image/imageMain.png');
+    z-index: +1;
+} */
 .material_icons {
 
     display: flex;
@@ -440,3 +444,4 @@ Col {
    
 
 }
+

@@ -88,6 +88,8 @@ const FormSend = ({ show, onHide }) => {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Control
+                    
+                     style={{width:350,}}
                         type="text"
                         value={name}
                         onChange={e => setName(e.target.value)}
@@ -95,6 +97,8 @@ const FormSend = ({ show, onHide }) => {
                         required />
 
                     <Form.Control
+                     className="mt-2"
+                     style={{width:350,}}
                         value={phone}
                         type="tel"
                         pattern="[0-9]*"
@@ -102,6 +106,8 @@ const FormSend = ({ show, onHide }) => {
                         placeholder={"Введите телефонный номер"}
                         required />
                     <Form.Control
+                        className="mt-2"
+                        style={{width:350,}}
                         value={address}
                         type="text"
                         onChange={e => setAddress(e.target.value)}

@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
 import { SHOP_ROUTE } from '../untils/consts';
 import { Context } from '../index';
+import styles from './styles.module.css';
 
 const AppRouter = () => {
     const { user } = useContext(Context)

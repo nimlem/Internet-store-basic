@@ -90,7 +90,7 @@ const Basket = observer(() => {
                                             marginLeft: 10,
 
                                         }}>
-                                        <img src={process.env.REACT_APP_API_URL + product.device.img} width={100} />
+                                        <img src={process.env.REACT_APP_API_URL + '/' + product.device.img} width={100} />
                                         <h6 className={styles.basket_device_card_name}>{product.device.name}</h6>
                                     </div>
                                 </div>

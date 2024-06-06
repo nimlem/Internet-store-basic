@@ -40,7 +40,7 @@ const DeviceItem = ({ device }) => {
         <div className={styles.card}  >
 
             <div className={styles.card_top} onClick={() => navigate(DEVICE_ROUTE + "/" + device.id)}>
-                <a className={styles.card_img}><img src={process.env.REACT_APP_API_URL + device.img} /></a>
+                <a className={styles.card_img}><img src={process.env.REACT_APP_API_URL + '/' + device.img} /></a>
             </div>
             <div className={styles.card_name} onClick={() => navigate(DEVICE_ROUTE + "/" + device.id)}><a> {device.name}</a></div>
 

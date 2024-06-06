@@ -118,7 +118,7 @@ const FormSend = ({ show, onHide }) => {
                     {device.basket.map(product =>
 
                         <div className="d-flex" key={product.device.id}>
-                            <img src={process.env.REACT_APP_API_URL + product.device.img} width={100}></img>
+                            <img src={process.env.REACT_APP_API_URL+ '/' + product.device.img} width={100}></img>
                             <input
                                 style={{
                                     width: '100%',

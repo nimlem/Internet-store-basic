@@ -61,7 +61,7 @@ const DevicePage = () => {
             // boxShadow: `2px 8px 16px rgba(0, 0, 0, .2)`,
           }}>
 
-          <Image className={styles.device_page_img} src={process.env.REACT_APP_API_URL + device.img} />
+          <Image className={styles.device_page_img} src={process.env.REACT_APP_API_URL + '/' + device.img} />
         </Col>
 
         <Col style={{

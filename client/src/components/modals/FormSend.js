@@ -32,7 +32,20 @@ const FormSend = ({ show, onHide }) => {
     }, [device.basket]);
 
 
+ let prices = 0;
+    {
+        device.basket.map(price =>
+            prices += Number(price.device.price)
 
+        )
+    }
+
+    const formatNumber = (number) => {
+        if (typeof number !== 'undefined') {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        }
+        return '';
+    }
 
 
 
@@ -52,13 +65,14 @@ const FormSend = ({ show, onHide }) => {
         event.preventDefault();
         if (name !== '' && phone !== '' && address !== '') {
             if (deviceArray !== '') {
-                const message = `Заказ доставки №${user.user.id}\nИмя получателя: ${name}\nНомер телефона: ${phone}\nПолный адрес: ${address}\nТовары: \n${deviceArray}`;
+                const message = `Заказ доставки №${user.user.id}\nИмя получателя: ${name}\nНомер телефона: ${phone}\nПолный адрес: ${address}\nТовары: \n${deviceArray}\nСтоимость заказа: ${formatNumber(prices)} сум.`;
 
                 await sendMessageToTelegram(message);
 
                 onHide();
-                removeTheBasket()
-                window.location.reload();
+                await removeTheBasket();
+                await window.location.reload();
+                alert('Ваша заявка отправленна, и будет рассмотрена в течении суток!')
             } else {
                 alert('В корзине нет товаров!');
             }
